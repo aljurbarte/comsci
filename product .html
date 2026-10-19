@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,59 +11,101 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     color: rgb(0, 0, 0);
-}   
+}
+
+body {
+    background: white;
+}
 
 nav {
     background: rgba(19, 16, 226, 0.336);
-    color: black;
     padding: 20px;
     text-align: center;
 }
 
 nav a {
+    display: inline-block;
     background: rgba(75, 102, 218, 0.247);
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
-    margin: 30px;
-}
-
-/* Logout sa ubos */
-.logout {
-    margin-top: 20px;
-}
-
-.logout a {
-    background: red;
-    color: rgb(189, 40, 40);
-    padding: 10px 20px;
-    text-decoration: none;
+    margin: 5px 15px;
+    padding: 10px;
     border-radius: 5px;
 }
 
-.products {
-    background: rgba(75, 102, 218, 0.247);
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 60px 20px;
+nav a:hover {
+    background: rgba(75, 102, 218, 0.6);
 }
 
+/* Products container: 4 columns and 2 rows */
+.products {
+    background: rgba(75, 102, 218, 0.247);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+/* All product cards have the same size */
 .product {
     background: rgb(39, 99, 167);
-    padding: 30px;
-    width: 200px;
+    padding: 20px;
+    width: 100%;
+    height: 300px;
     text-align: center;
     box-shadow: 0 5px 15px #af1c83;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Product images */
+.product img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Product names */
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Product descriptions and prices */
+.product p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        margin: 5px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Navigation bar -->
 <nav>
-
     <a href="home page.html">Home</a>
     <a href="product.html">Product</a>
     <a href="contact.html">Contact</a>
@@ -71,70 +113,84 @@ nav a {
     <a href="index.html" class="logout-nav" onclick="logout()">Log Out</a>
 </nav>
 
-</nav>
+<!-- Products section -->
 <div class="products">
+
     <div class="product">
-        <img src="hh.jpg" alt="pon" height="100px" width="100%">
+        <img src="hh.jpg" alt="Infinix GT 30 Pro">
         <h2>Infinix GT 30 Pro</h2>
         <p>
-            512GB/12GB Color: Dark Flare
-            <br><br>
+            512GB / 12GB<br>
+            Color: Dark Flare<br><br>
             Ranges from ₱13,999 to ₱15,735
         </p>
     </div>
 
     <div class="product">
-        <img src="gt10.jpg" alt="kamot" height="100px" width="100%">
+        <img src="gt10.jpg" alt="Infinix GT 10 Pro">
         <h2>GT 10</h2>
         <p>
-            Infinix GT 10 Pro (8GB RAM + 256GB Storage)
-            <br><br>
+            Infinix GT 10 Pro<br>
+            8GB RAM + 256GB Storage<br><br>
             ₱13,999
         </p>
     </div>
 
     <div class="product">
-        <img src="17.jpg" alt="top" height="100px" width="100%">
+        <img src="17.jpg" alt="iPhone 17 Pro Max">
         <h2>iPhone 17</h2>
-        <p>Apple iPhone 17 Pro Max</p>
-        <br><br>
-        ₱86,459.00
+        <p>
+            Apple iPhone 17 Pro Max<br><br>
+            ₱86,459.00
+        </p>
     </div>
 
     <div class="product">
-        <img src="16.jpg" alt="head" height="100px" width="100%">
+        <img src="16.jpg" alt="iPhone 16 Pro Max">
         <h2>iPhone 16</h2>
-        <p>iPhone 16 Pro Max</p>
-        <br><br>
-        ₱85,900
+        <p>
+            iPhone 16 Pro Max<br><br>
+            ₱85,900
+        </p>
     </div>
+
     <div class="product">
-        <img src="ip13.jpg" alt="head" height="100px" width="100%">
+        <img src="ip13.jpg" alt="iPhone 13">
         <h2>iPhone 13</h2>
-        <p>iPhone 13 Max</p>
-        <br><br>
-        ₱65,900 
+        <p>
+            iPhone 13 Max<br><br>
+            ₱65,900
+        </p>
     </div>
+
     <div class="product">
-        <img src="14.jpg" alt="head" height="100px" width="100%">
+        <img src="14.jpg" alt="iPhone 14">
         <h2>iPhone 14</h2>
-        <p>iPhone 14</p>
-        <br><br>
-        ₱85,900 
+        <p>
+            iPhone 14<br><br>
+            ₱85,900
+        </p>
     </div>
+
     <div class="product">
-        <img src="15.jpg" alt="head" height="100px" width="100%">
+        <img src="15.jpg" alt="iPhone 18">
         <h2>iPhone 18</h2>
-        <p>iPhone 18</p>
-        <br><br>
-        ₱90,900 
+        <p>
+            iPhone 18<br><br>
+            ₱90,900
+        </p>
     </div>
+
     <div class="product">
-        <img src="ipa 15 pro.jpg" alt="head" height="100px" width="100%">
-        <h2>iPhone 15 pro </h2>
-        <p>iPhone 15 pro</p>
-        <br><br>
-        ₱95,000 
+        <img src="ipa 15 pro.jpg" alt="iPhone 15 Pro">
+        <h2>iPhone 15 Pro</h2>
+        <p>
+            iPhone 15 Pro<br><br>
+            ₱95,000
+        </p>
     </div>
+
+</div>
+
 </body>
 </html>
