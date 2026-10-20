@@ -1,67 +1,215 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About Tech Home</title>
-
+<title>About Us | Tech Store</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial;
-    background: #b6ebdf;
-    color: rgb(72, 72, 209);
-}    
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a5f, #2563eb);
+    color: white;
+}
 
+/* Navigation Bar */
 nav {
-    background: #265eb3;
-    color: black;
+    background: #111827;
     padding: 20px;
     text-align: center;
+    border-bottom: 2px solid #38bdf8;
 }
 
 nav a {
-    color: rgb(0, 0, 0);
+    display: inline-block;
+    color: #e2e8f0;
     text-decoration: none;
-    margin: 30px;
+    margin: 5px 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
+nav a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Logout Button */
+.logout-nav {
+    background: #dc2626;
+    color: white;
+}
+
+.logout-nav:hover {
+    background: #991b1b;
+}
+
+/* About Section */
 .about {
+    width: 90%;
+    max-width: 850px;
+    margin: 70px auto;
+    padding: 50px 35px;
     text-align: center;
-    padding: 100px 30px;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* About Heading */
+.about h1 {
+    color: #1d4ed8;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    color: #0f172a;
+    font-size: 22px;
+    margin: 30px 0 15px;
+}
+
+/* About Paragraph */
 .about p {
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 650px;
+    margin: 15px auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* Store Highlight */
+.store-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background: #eff6ff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 180px;
+    border: 1px solid #bfdbfe;
+}
+
+.info-card h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
     font-size: 18px;
+}
+
+.info-card p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 5px;
+    }
+
+    nav a {
+        margin: 4px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .about {
+        margin: 35px auto;
+        padding: 35px 20px;
+    }
+
+    .about h1 {
+        font-size: 27px;
+    }
+
+    .about p {
+        font-size: 15px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Navigation Bar -->
 <nav>
     <a href="home page.html">Home</a>
-    <a href="product .html">Product</a>
+    <a href="product.html">Product</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
-     <a href="index.html" class="logout-nav" onclick="logout()">Log Out</a>
+    <a href="index.html" class="logout-nav">Log Out</a>
 </nav>
 
-<div class="about">
+<!-- About Section -->
+<section class="about">
 
-    <h1>About Cellphone store</h1>
+    <h1>About Our Cellphone Store</h1>
 
-    <p>Our cellphone store sells affordable, 
-    <br> We provide quality products and friendly service to meet our customers’ needs.
+    <p>
+        Welcome to our cellphone store! We offer a variety of
+        smartphones to meet the needs of our customers.
+        Our goal is to provide quality products at affordable prices.
     </p>
 
-</div>
+    <p>
+        We believe that every customer deserves friendly service
+        and a convenient shopping experience. Whether you need a
+        phone for gaming, studying, work, or everyday use,
+        we are here to help you find the right device.
+    </p>
+
+    <h2>Why Choose Our Store?</h2>
+
+    <div class="store-info">
+
+        <div class="info-card">
+            <h3>Quality Products</h3>
+            <p>We offer a selection of smartphones for different needs.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Affordable Prices</h3>
+            <p>Explore cellphone options at different price ranges.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Friendly Service</h3>
+            <p>We aim to make your shopping experience easy and convenient.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2026 Tech Store | All Rights Reserved
+</footer>
 
 </body>
 </html>
