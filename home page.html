@@ -15,50 +15,73 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Background Image */
         body {
             min-height: 100vh;
-            background: url("background.jpg") center center / cover no-repeat fixed;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
+        /* Navigation Bar */
         nav {
-            background: #667eea;
+            background: transparent;
             padding: 20px;
             text-align: center;
         }
 
+        /* Navigation Links */
         nav a {
-            color: rgb(14, 5, 5);
+            color: white;
             text-decoration: none;
             margin: 20px;
             font-size: 17px;
             display: inline-block;
+            text-shadow: 1px 1px 4px black;
+            transition: 0.3s;
         }
 
+        /* Hover Effect */
         nav a:hover {
-            color: white;
+            color: yellow;
         }
 
+        /* Logout Button */
         .logout-nav {
             background-color: red;
             color: white;
             padding: 10px 18px;
             border-radius: 5px;
+            text-shadow: none;
         }
 
         .logout-nav:hover {
-            background-color: rgb(218, 209, 209);
-            color: black;
+            background-color: darkred;
+            color: white;
         }
 
+        /* Main Content */
         .content {
             text-align: center;
             padding: 100px 20px;
+            color: white;
         }
 
+        /* Mobile Responsive */
         @media (max-width: 600px) {
+            nav {
+                padding: 15px 5px;
+            }
+
             nav a {
                 margin: 8px;
                 font-size: 15px;
+            }
+
+            .content {
+                padding: 60px 15px;
             }
         }
     </style>
@@ -66,6 +89,7 @@
 
 <body>
 
+    <!-- Navigation Menu -->
     <nav>
         <a href="home page.html">Home</a>
         <a href="product .html">Product</a>
@@ -74,6 +98,7 @@
         <a href="index.html" class="logout-nav">Log Out</a>
     </nav>
 
+    <!-- Main Content -->
     <div class="content">
     </div>
 
