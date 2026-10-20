@@ -15,21 +15,26 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Background Image */
+        /* Background Color */
         body {
             min-height: 100vh;
-            background-image: url("background.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background: linear-gradient(
+                135deg,
+                #020617,
+                #0f172a,
+                #1e40af,
+                #0891b2
+            );
             background-attachment: fixed;
+            background-size: cover;
         }
 
         /* Navigation Bar */
         nav {
-            background: transparent;
+            background: rgba(2, 6, 23, 0.55);
             padding: 20px;
             text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.5);
         }
 
         /* Navigation Links */
@@ -39,49 +44,87 @@
             margin: 20px;
             font-size: 17px;
             display: inline-block;
-            text-shadow: 1px 1px 4px black;
             transition: 0.3s;
         }
 
-        /* Hover Effect */
         nav a:hover {
-            color: yellow;
+            color: #38bdf8;
         }
 
         /* Logout Button */
         .logout-nav {
-            background-color: red;
+            background-color: #ef4444;
             color: white;
             padding: 10px 18px;
-            border-radius: 5px;
-            text-shadow: none;
+            border-radius: 6px;
         }
 
         .logout-nav:hover {
-            background-color: darkred;
+            background-color: #b91c1c;
             color: white;
         }
 
         /* Main Content */
         .content {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 100px 20px;
+            padding: 60px 20px;
             color: white;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* Shop Button */
+        .shop-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #0284c7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #0369a1;
+            transform: translateY(-3px);
         }
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
             nav {
-                padding: 15px 5px;
+                padding: 12px 5px;
             }
 
             nav a {
                 margin: 8px;
-                font-size: 15px;
+                font-size: 14px;
             }
 
-            .content {
-                padding: 60px 15px;
+            .content h1 {
+                font-size: 32px;
+            }
+
+            .content p {
+                font-size: 15px;
             }
         }
     </style>
@@ -100,6 +143,15 @@
 
     <!-- Main Content -->
     <div class="content">
+        <h1>WELCOME TO TECH STORE</h1>
+
+        <p>
+            Discover the latest smartphones at your fingertips.
+            Find quality cellphone products that match your needs
+            and enjoy a convenient shopping experience.
+        </p>
+
+        <a href="product .html" class="shop-btn">Explore Products</a>
     </div>
 
 </body>
