@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Products</title>
+<title>Tech Products</title>
 
 <style>
 * {
@@ -12,91 +13,150 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    color: rgb(0, 0, 0);
 }
 
 body {
-    background: white;
+    background: #0f172a;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
+/* Navigation Bar */
 nav {
-    background: rgba(19, 16, 226, 0.336);
+    background: #111827;
     padding: 20px;
     text-align: center;
+    border-bottom: 2px solid #38bdf8;
 }
 
 nav a {
     display: inline-block;
-    background: rgba(75, 102, 218, 0.247);
-    color: black;
+    color: #e2e8f0;
     text-decoration: none;
     margin: 5px 15px;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    background: rgba(75, 102, 218, 0.6);
+    background: #2563eb;
+    color: white;
 }
 
-/* Products container: 4 columns and 2 rows */
+/* Page Heading */
+.heading {
+    text-align: center;
+    padding: 35px 15px 10px;
+}
+
+.heading h1 {
+    color: #38bdf8;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+/* Products Container */
 .products {
-    background: rgba(75, 102, 218, 0.247);
+    background: #0f172a;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+    gap: 25px;
+    padding: 35px 25px;
 }
 
-/* All product cards have the same size */
+/* Product Cards */
 .product {
-    background: rgb(39, 99, 167);
+    background: #f8fafc;
+    color: #111827;
     padding: 20px;
     width: 100%;
-    height: 300px;
+    min-height: 310px;
     text-align: center;
-    box-shadow: 0 5px 15px #af1c83;
-    border-radius: 5px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Product images */
+.product:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+}
+
+/* Product Images */
 .product img {
     width: 100%;
-    height: 120px;
+    height: 140px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-/* Product names */
+/* Product Names */
 .product h2 {
+    color: #0f172a;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-/* Product descriptions and prices */
+/* Product Details */
 .product p {
+    color: #475569;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
-/* Responsive layout for smaller screens */
+/* Product Prices */
+.price {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Logout Button */
+.logout-nav {
+    background: #dc2626;
+    color: white;
+}
+
+.logout-nav:hover {
+    background: #991b1b;
+}
+
+/* Tablet Layout */
 @media (max-width: 900px) {
     .products {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* Mobile Layout */
 @media (max-width: 500px) {
     .products {
         grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    nav {
+        padding: 12px 5px;
     }
 
     nav a {
-        margin: 5px;
+        margin: 4px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .heading h1 {
+        font-size: 26px;
     }
 }
 </style>
@@ -104,16 +164,22 @@ nav a:hover {
 
 <body>
 
-<!-- Navigation bar -->
+<!-- Navigation Bar -->
 <nav>
     <a href="home page.html">Home</a>
     <a href="product.html">Product</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
-    <a href="index.html" class="logout-nav" onclick="logout()">Log Out</a>
+    <a href="index.html" class="logout-nav">Log Out</a>
 </nav>
 
-<!-- Products section -->
+<!-- Page Heading -->
+<div class="heading">
+    <h1>TECH PRODUCTS</h1>
+    <p>Discover your next smartphone.</p>
+</div>
+
+<!-- Products Section -->
 <div class="products">
 
     <div class="product">
@@ -122,17 +188,16 @@ nav a:hover {
         <p>
             512GB / 12GB<br>
             Color: Dark Flare<br><br>
-            Ranges from ₱13,999 to ₱15,735
+            <span class="price">₱13,999 - ₱15,735</span>
         </p>
     </div>
 
     <div class="product">
         <img src="gt10.jpg" alt="Infinix GT 10 Pro">
-        <h2>GT 10</h2>
+        <h2>Infinix GT 10 Pro</h2>
         <p>
-            Infinix GT 10 Pro<br>
             8GB RAM + 256GB Storage<br><br>
-            ₱13,999
+            <span class="price">₱13,999</span>
         </p>
     </div>
 
@@ -141,7 +206,7 @@ nav a:hover {
         <h2>iPhone 17</h2>
         <p>
             Apple iPhone 17 Pro Max<br><br>
-            ₱86,459.00
+            <span class="price">₱86,459.00</span>
         </p>
     </div>
 
@@ -150,7 +215,7 @@ nav a:hover {
         <h2>iPhone 16</h2>
         <p>
             iPhone 16 Pro Max<br><br>
-            ₱85,900
+            <span class="price">₱85,900</span>
         </p>
     </div>
 
@@ -158,8 +223,8 @@ nav a:hover {
         <img src="ip13.jpg" alt="iPhone 13">
         <h2>iPhone 13</h2>
         <p>
-            iPhone 13 Max<br><br>
-            ₱65,900
+            iPhone 13<br><br>
+            <span class="price">₱65,900</span>
         </p>
     </div>
 
@@ -168,7 +233,7 @@ nav a:hover {
         <h2>iPhone 14</h2>
         <p>
             iPhone 14<br><br>
-            ₱85,900
+            <span class="price">₱85,900</span>
         </p>
     </div>
 
@@ -177,7 +242,7 @@ nav a:hover {
         <h2>iPhone 18</h2>
         <p>
             iPhone 18<br><br>
-            ₱90,900
+            <span class="price">₱90,900</span>
         </p>
     </div>
 
@@ -186,7 +251,7 @@ nav a:hover {
         <h2>iPhone 15 Pro</h2>
         <p>
             iPhone 15 Pro<br><br>
-            ₱95,000
+            <span class="price">₱95,000</span>
         </p>
     </div>
 
