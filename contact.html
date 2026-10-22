@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +19,8 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, #0f172a, #1e3a5f, #2563eb);
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation Bar */
@@ -33,32 +35,39 @@ nav a {
     display: inline-block;
     color: #e2e8f0;
     text-decoration: none;
-    margin: 5px 15px;
+    margin: 5px 10px;
     padding: 10px 15px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     background: #2563eb;
     color: white;
 }
 
 /* Logout Button */
-.logout-nav {
+nav a.logout-nav {
     background: #dc2626;
     color: white;
 }
 
-.logout-nav:hover {
+nav a.logout-nav:hover {
     background: #991b1b;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 /* Contact Container */
 .contact-box {
     width: 90%;
     max-width: 500px;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 35px;
     background: #ffffff;
     color: #0f172a;
@@ -144,13 +153,13 @@ footer {
     }
 
     nav a {
-        margin: 4px;
+        margin: 4px 2px;
         padding: 8px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .contact-box {
-        margin: 35px auto;
+        margin: 25px auto;
         padding: 25px 20px;
     }
 
@@ -167,55 +176,77 @@ footer {
 <nav>
     <a href="home page.html">Home</a>
     <a href="product.html">Product</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
     <a href="about.html">About</a>
     <a href="index.html" class="logout-nav">Log Out</a>
 </nav>
 
-<!-- Contact Form -->
-<div class="contact-box">
+<!-- Main Content -->
+<main>
+    <div class="contact-box">
 
-    <h1>Contact Us</h1>
+        <h1>Contact Us</h1>
 
-    <p>
-        Have a question about our cellphone products?
-        Send us a message!
-    </p>
+        <p>
+            Have a question about our cellphone products?
+            Send us a message!
+        </p>
 
-    <form action="#" method="post">
+        <form id="contactForm">
 
-        <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            aria-label="Your name"
-            required
-        >
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                aria-label="Your name"
+                required
+            >
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            aria-label="Your email"
-            required
-        >
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                aria-label="Your email"
+                required
+            >
 
-        <textarea
-            name="message"
-            placeholder="Write your message here..."
-            aria-label="Your message"
-            required
-        ></textarea>
+            <textarea
+                name="message"
+                placeholder="Write your message here..."
+                aria-label="Your message"
+                required
+            ></textarea>
 
-        <button type="submit">Send Message</button>
+            <button type="submit">Send Message</button>
 
-    </form>
+        </form>
 
-</div>
+        <p id="formMessage" role="status"
+           style="margin-top:15px; margin-bottom:0;">
+        </p>
 
+    </div>
+</main>
+
+<!-- Footer -->
 <footer>
     &copy; 2026 Tech Store | All Rights Reserved
 </footer>
 
+<script>
+document.getElementById("contactForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        document.getElementById("formMessage").textContent =
+            "Thank you! Your message has been entered successfully.";
+
+        this.reset();
+    }
+);
+</script>
+
 </body>
 </html>
+```
